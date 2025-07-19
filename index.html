@@ -187,10 +187,11 @@
                     <h3 class="text-xl font-bold text-gray-900">${job.title}</h3>
                     <p class="text-lg italic text-gray-700">${job.company} (<a href="${job.website}" target="_blank" class="text-blue-600 hover:underline">${job.website.replace(/(^\w+:|^)\/\//, '')}</a>), ${job.location}</p>
                     <p class="text-base text-gray-600 mb-2">${job.dates}</p>
+                    <p class="text-sm font-semibold text-gray-700 mb-3">Main Role: <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${job.Role}</span></p>
                     <div class="grid grid-cols-1 gap-4 mb-3 text-sm text-gray-800">
                         <div><strong>Market Served:</strong> ${job.market_served.join(', ')}</div>
                         <div><strong>Team Locations:</strong> ${job.team_locations.join(', ')}</div>
-                        <div><strong>Managed Budget:</strong> ${job.managed_budget}</div>
+                        <div><strong>Managed Budget(Annual):</strong> ${job.managed_budget}</div>
                         <div><strong>Tech Stack:</strong></div> 
                         <div class="flex flex-wrap gap-2">
                             ${job.tech_stack.map(tech => `<span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">${tech}</span>`).join('')}

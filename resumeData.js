@@ -9,6 +9,12 @@ const resumeData = {
     },
     "sections": [
         {
+            "id": "about-me",
+            "title": "About Me",
+            "type": "text",
+            "data": "Lu Vinh Thinh(Mono), currently based in Munich(Germany), serves as the Head of Global AML Transaction Monitoring at Klarna Bank AB. With over 14 years of experience in the banking, fintech, and insurance sectors, he has a proven track record of leading large, cross-functional teams of over 100 members and managing annual budgets exceeding $5 million. His key achievements include significantly reducing operational workloads by 20%, accelerating product development cycles from months to days, and successfully delivering numerous complex products to market. Mono is a dynamic and results-oriented technology leader, recognized for his expertise in defining and executing robust technology strategies in complex, ambiguous environments. He excels at fostering strong stakeholder relationships to deliver client-focused solutions while ensuring regulatory compliance and mitigating risk. His technical proficiency spans cloud platforms like Azure, AWS, microservices architecture, and a wide range of DevOps and Big Data technologies. He is currently seeking a senior leadership role where he can leverage his extensive experience to drive platform growth, enhance team performance, and scale technology delivery."
+        },
+        {
             "id": "objective",
             "title": "Objective",
             "type": "text",
@@ -58,9 +64,10 @@ const resumeData = {
                     "website": "https://www.klarna.com",
                     "location": "Germany",
                     "dates": "2022-08 to Present",
+                    "Role": "People leader",
                     "market_served": ["North America", "Europe", "Asia Pacific"],
                     "team_locations": ["Sweden", "Germany", "Spain", "Poland"],
-                    "managed_budget": "Approx. €4M annually",
+                    "managed_budget": "EUR 4Mil ",
                     "tech_stack": ["Python (Pandas, NumPy)", "ApacheAirflow", "SQL (Athena)", "AWS", "Apache Kafka", "Qliksense", "Quicksight", "Jenkins"],
                     "description": [
                         "Manage and mentor two teams, the BAU team and the Project team, consisting of analysts, engineers, SMEs, data scientists, and managers.",
@@ -89,9 +96,10 @@ const resumeData = {
                     "website": "http://www.360f.com",
                     "location": "Singapore",
                     "dates": "2021-03 to 2022-07",
+                    "Role": "People leader",
                     "market_served": ["Middle East", "Asia Pacific"],
                     "team_locations": ["Vietnam", "Singapore", "India", "Philippines"],
-                    "managed_budget": "USD 2M annually",
+                    "managed_budget": "USD 2Mil",
                     "tech_stack": ["SpringBoot", "Docker", "Kubernetes", "AWS", "Python", "Node.js", "Terraform", "GitHub Actions", "Azure", "MySQL"],
                     "description": 
                     [
@@ -117,9 +125,10 @@ const resumeData = {
                     "website": "http://www.manulife.com",
                     "location": "Singapore",
                     "dates": "2018-05 to 2021-03",
+                    "Role": "People leader",
                     "market_served": ["Asia-Pacific"],
                     "team_locations": ["Vietnam", "Singapore", "Philippines"],
-                    "managed_budget": "USD 5M annually",
+                    "managed_budget": "USD 5Mil",
                     "tech_stack": ["Java", "SpringBoot", "SQL", "Jenkins", "Xcode"],
                     "description": 
                     [
@@ -145,6 +154,7 @@ const resumeData = {
                     "website": "http://www.accellion.com",
                     "location": "Singapore",
                     "dates": "2018-01 to 2018-05",
+                    "Role": "Individual Contributor",
                     "market_served": ["Global"],
                     "team_locations": ["Singapore"],
                     "managed_budget": "N/A",
@@ -170,6 +180,7 @@ const resumeData = {
                     "website": "http://www.nus.edu.sg",
                     "location": "Singapore",
                     "dates": "2017-05 to 2017-11",
+                    "Role": "Individual Contributor",
                     "market_served": ["Singapore"],
                     "team_locations": ["Singapore"],
                     "managed_budget": "N/A",
@@ -200,6 +211,7 @@ const resumeData = {
                     "website": "http://www.aviva.com.sg",
                     "location": "Singapore",
                     "dates": "2011-02 to 2017-05",
+                    "Role": "People leader",
                     "market_served": ["Asia-Pacific"],
                     "team_locations": ["Singapore"],
                     "managed_budget": "N/A",
