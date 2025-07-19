@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lu Vinh Thinh Mono - Resume</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general body */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-100 text-gray-800 leading-relaxed;
+        }
+        /* Ensure links are styled consistently */
+        a {
+            @apply text-blue-600 hover:underline;
+        }
+        /* Hide content sections by default */
+        .content-section {
+            display: none;
+        }
+        /* Show active content section */
+        .content-section.active {
+            display: block;
+        }
+        /* Style for active navigation link */
+        .nav-link.active {
+            @apply bg-blue-600 text-white shadow-md;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 lg:p-12">
+
+    <!-- Top Header Section for Personal Info -->
+    <header id="personal-info-header" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 lg:p-12 max-w-6xl mx-auto text-center pb-6 border-b-2 border-gray-300 mb-8">
+        <h1 id="header-name" class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2"></h1>
+        <p class="text-lg sm:text-xl text-gray-600 mb-4">
+            <span id="header-address"></span> | <a id="header-email" href="#" class="text-blue-600 hover:underline"></a> | <span id="header-phone"></span>
+        </p>
+        <div class="flex justify-center space-x-6 text-lg">
+            <a id="header-linkedin" href="#" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out">LinkedIn</a>
+            <a id="header-github" href="#" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 ease-in-out">GitHub</a>
+        </div>
+    </header>
+
+    <!-- Main Two-Column Content Container -->
+    <div class="container mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 lg:p-12 max-w-6xl flex flex-col lg:flex-row">
+        <!-- Left Column: Navigation -->
+        <div class="lg:w-1/4 pr-0 lg:pr-8 mb-8 lg:mb-0 border-b-2 lg:border-b-0 lg:border-r-2 border-gray-200 pb-8 lg:pb-0">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Sections</h2>
+            <nav id="resume-nav">
+                <!-- Navigation links will be dynamically loaded here -->
+            </nav>
+        </div>
+
+        <!-- Right Column: Content Details -->
+        <div id="resume-content" class="lg:w-3/4 pl-0 lg:pl-8">
+            <!-- Resume content details will be dynamically loaded here -->
+            <p class="text-center text-gray-500">Select a section from the left navigation.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- Resume Data Layer ---
+        const resumeData = {
+            personalInfo: {
+                name: "Lu Vinh Thinh Mono",
+                address: "MUNICH, 81925",
+                email: "LUVINHTHINΗ.ΜΟΝΟ@GMAIL.COM",
+                phone: "(+49) 151 1103 6828",
+                linkedin: "https://sg.linkedin.com/pub/vinh-thinh-lu/50/870/35b",
+                github: "https://github.com/luvinhthinh"
+            },
+            sections: [
+                {
+                    id: "objective",
+                    title: "Objective",
+                    type: "text",
+                    data: "Engineering executive with 14+ years leading high-performing teams in fintech and insurance. Seeking a Director or Manager role to drive platform growth, team performance, and technology delivery at scale."
+                },
+                {
+                    id: "qualities",
+                    title: "My Qualities",
+                    type: "text",
+                    data: "A dynamic technology leader with a strong learning mindset and 14+ years of experience in insurance, banking, and fintech industries. Proven expertise in implementing technology strategies, managing multidisciplinary teams of 100+ members, and overseeing budgets exceeding $5M annually. Adept at fostering long-lasting business relationships, exceeding stakeholder expectations, and delivering client-focused solutions. Skilled in navigating ambiguity and building structure in complex environments. Recent experience includes leading AML-CTF initiatives in the European banking sector, ensuring regulatory compliance, and mitigating financial crime risks. Strong educational foundation with a Computer Science degree (National University of Singapore) and an MBA (University of Newcastle), supplemented by certifications in Agile, Big Data, and Python Programming."
+                },
+                {
+                    id: "skills",
+                    title: "Key Skill Set",
+                    type: "skills",
+                    data: {
+                        leadershipDelivery: [
+                            "Engineering Team Leadership (up to 100+)",
+                            "Agile & DevOps Transformation",
+                            "Budget & Vendor Management (>$5M)",
+                            "Regulatory Compliance (AML/CTF, GDPR)",
+                            "Innovation and Strategic Vision",
+                            "Stakeholder Communication, Negotiation, and Relationship Building",
+                            "Operational Excellence and Risk Mitigation",
+                            "Decision-Making in Complex and Ambiguous Environments",
+                            "Global and Cross-functional Collaboration"
+                        ],
+                        technical: [
+                            "Microservices & Cloud Platforms: SpringBoot, Docker, Kubernetes, AWS (Lambda, EC2, S3), Azure Functions",
+                            "Programming Languages & Frameworks: Java, Python (Pandas, NumPy, Selenium), SQL (Athena), Node.js (Express.js)",
+                            "Infrastructure Provisioning and Monitoring: Terraform, Loki, Prometheus, and Grafana",
+                            "DevOps & Automation: CI/CD pipelines (Jenkins, GitHub Actions), Infrastructure provisioning (Terraform)",
+                            "Big Data & Analytics: Hadoop, PySpark, Apache Kafka, Qliksense, Quicksight",
+                            "API Management & Authentication: Okta, OAuth 2.0, OpenID Connect",
+                            "AI in development: GPT, Cursor, and Copilot"
+                        ]
+                    }
+                },
+                {
+                    id: "experience",
+                    title: "Work Experience",
+                    type: "experience",
+                    data: [
+                        {
+                            title: "Head of Global AML Transaction Monitoring",
+                            company: "Klarna Bank AB",
+                            website: "https://www.klarna.com",
+                            location: "Germany",
+                            dates: "2022-08 to Present",
+                            description: [
+                                "Managed and mentored teams of analysts, engineers, and data scientists across Sweden, Germany, Spain, and Poland.",
+                                "Oversaw implementation and operation of AML systems, integrating AI-driven detection across >10M transactions/month.",
+                                "Led system upgrades, analyzed system data to identify financial crime trends, and utilized advanced data science techniques to enhance detection algorithms.",
+                                "Ensured compliance with AML regulations and managed projects for system implementation and upgrades."
+                            ],
+                            achievements: [
+                                "20% reduction in operational workload and 12% reduction in average handling time",
+                                "25% decrease in time-to-production for AML typology logic",
+                                "Successfully onboarded a reliable AML-CTF service provider."
+                            ]
+                        },
+                        {
+                            title: "Chief Technology Officer",
+                            company: "360F Pte Ltd",
+                            website: "http://www.360f.com",
+                            location: "Singapore",
+                            dates: "2021-03 to 2022-07",
+                            description: [],
+                            achievements: [
+                                "Restructured development environments, reducing product development time from 3 months to 3 days.",
+                                "Built and coached a team of 20+ members across Vietnam, Singapore, and India.",
+                                "Managed an annual budget of USD 2 million."
+                            ]
+                        },
+                        {
+                            title: "Technical Delivery Manager, Asia Delivery Service",
+                            company: "Manulife",
+                            website: "http://www.manulife.com",
+                            location: "Singapore",
+                            dates: "2018-05 to 2021-03",
+                            description: [],
+                            achievements: [
+                                "Delivered 35+ insurance products within a 10-month deadline and introduced solutions that reduced development and testing efforts by 10x.",
+                                "Managed 6 vendor teams with a total of 100+ members across Vietnam, Singapore, and the Philippines.",
+                                "Managed an annual budget of USD 5 million."
+                            ]
+                        },
+                        {
+                            title: "Senior Automation Engineer",
+                            company: "Accellion",
+                            website: "http://www.accellion.com",
+                            location: "Singapore",
+                            dates: "2018-01 to 2018-05",
+                            description: [
+                                "Automated 90+ applications with Jenkins pipelines, reducing processing time by 50%."
+                            ],
+                            achievements: []
+                        },
+                        {
+                            title: "System Analyst, IT Sales Support",
+                            company: "Aviva Asia Pte Ltd",
+                            website: "http://www.aviva.com.sg",
+                            location: "Singapore",
+                            dates: "2011-02 to 2017-05",
+                            description: [],
+                            achievements: [
+                                "Redesigned engine applications for mobile offline computation and achieved a 50% reduction in product development man-days."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "education",
+                    title: "Education",
+                    type: "education",
+                    data: [
+                        {
+                            degree: "Master of Business Administration",
+                            university: "University of Newcastle, Australia",
+                            dates: "2016-09 to 2019-04",
+                            focus: "Organizational Behavior and Strategic Management"
+                        },
+                        {
+                            degree: "Bachelor of Science",
+                            university: "National University of Singapore, Singapore",
+                            dates: "2006-08 to 2010-12",
+                            focus: "Software Development, IT Project Management, Artificial Intelligence"
+                        }
+                    ]
+                },
+                {
+                    id: "certifications",
+                    title: "Certifications",
+                    type: "certifications",
+                    data: [
+                        "ISTQB Foundation Level (istqb-vtb-fl-20130410)",
+                        "Coursera Specializations:", // This will be handled specially in the rendering function
+                        "Python Programming (University of Michigan)",
+                        "Big Data (UC San Diego)",
+                        "Agile Software Product Management (University of Alberta)",
+                        "Six Sigma Foundation"
+                    ]
+                },
+                {
+                    id: "languages",
+                    title: "Languages",
+                    type: "list",
+                    data: [
+                        "Vietnamese (Native)",
+                        "English (Advanced)",
+                        "German (B1 level)",
+                        "Japanese (N5 level)"
+                    ]
+                },
+                {
+                    id: "additional-info",
+                    title: "Additional Information",
+                    type: "additionalInfo",
+                    data: {
+                        availability: "Twelve weeks of advance notice (Negotiable)",
+                        immigrationStatus: "Citizen (Vietnam) and Permanent Resident/Niederlassungserlaubnis (Germany)",
+                        reference: "Available upon request"
+                    }
+                }
+            ]
+        };
+
+        // --- HTML Rendering Functions (Presentation Layer) ---
+
+        /**
+         * Renders a simple text paragraph.
+         * @param {string} text The text content.
+         * @returns {string} HTML string.
+         */
+        function renderText(text) {
+            return `<p class="text-base sm:text-lg text-gray-700">${text}</p>`;
+        }
+
+        /**
+         * Renders the skills section.
+         * @param {object} skillsData The skills data object.
+         * @returns {string} HTML string.
+         */
+        function renderSkills(skillsData) {
+            return `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="skill-category">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Leadership & Delivery</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            ${skillsData.leadershipDelivery.map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Technical</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            ${skillsData.technical.map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * Renders the experience section.
+         * @param {Array<object>} experienceData The array of experience objects.
+         * @returns {string} HTML string.
+         */
+        function renderExperience(experienceData) {
+            return experienceData.map(job => `
+                <div class="experience-item mb-6 p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900">${job.title}</h3>
+                    <p class="text-lg italic text-gray-700">${job.company} (<a href="${job.website}" target="_blank">${job.website.replace(/(^\w+:|^)\/\//, '')}</a>), ${job.location}</p>
+                    <p class="text-base text-gray-600 mb-2">${job.dates}</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        ${job.description.map(desc => `<li>${desc}</li>`).join('')}
+                        ${job.achievements.length > 0 ? `<li><strong>Achievements:</strong> ${job.achievements.join('; ')}</li>` : ''}
+                    </ul>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * Renders the education section.
+         * @param {Array<object>} educationData The array of education objects.
+         * @returns {string} HTML string.
+         */
+        function renderEducation(educationData) {
+            return educationData.map(edu => `
+                <div class="education-item mb-4 p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900">${edu.degree}</h3>
+                    <p class="text-lg italic text-gray-700">${edu.university}</p>
+                    <p class="text-base text-gray-600 mb-1">${edu.dates}</p>
+                    <p class="text-base text-gray-700">Focus: ${edu.focus}</p>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * Renders the certifications section.
+         * @param {Array<string>} certificationsData The array of certification strings.
+         * @returns {string} HTML string.
+         */
+        function renderCertifications(certificationsData) {
+            return `
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    ${certificationsData.map(cert => {
+                        if (cert === "Coursera Specializations:") {
+                            return `
+                                <li class="certification-item">Coursera Specializations:
+                                    <ul class="list-circle list-inside ml-4">
+                                        <li>Python Programming (University of Michigan)</li>
+                                        <li>Big Data (UC San Diego)</li>
+                                        <li>Agile Software Product Management (University of Alberta)</li>
+                                    </ul>
+                                </li>
+                            `;
+                        }
+                        return `<li class="certification-item">${cert}</li>`;
+                    }).join('')}
+                </ul>
+            `;
+        }
+
+        /**
+         * Renders a generic list section (e.g., Languages).
+         * @param {Array<string>} listData The array of list items.
+         * @returns {string} HTML string.
+         */
+        function renderList(listData) {
+            return `
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    ${listData.map(item => `<li class="language-item">${item}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        /**
+         * Renders the additional information section.
+         * @param {object} additionalInfoData The additional information data object.
+         * @returns {string} HTML string.
+         */
+        function renderAdditionalInfo(additionalInfoData) {
+            return `
+                <div class="info-item mb-2 text-gray-700">
+                    <strong class="font-semibold">Date of Availability:</strong> ${additionalInfoData.availability}
+                </div>
+                <div class="info-item mb-2 text-gray-700">
+                    <strong class="font-semibold">Immigration Status:</strong> ${additionalInfoData.immigrationStatus}
+                </div>
+                <div class="info-item mb-2 text-gray-700">
+                    <strong class="font-semibold">Reference:</strong> ${additionalInfoData.reference}
+                </div>
+            `;
+        }
+
+
+        // --- Main Rendering Logic ---
+
+        // Function to render the resume
+        function renderResume() {
+            // Populate the personal info header dynamically from resumeData
+            document.getElementById('header-name').textContent = resumeData.personalInfo.name;
+            document.getElementById('header-address').textContent = resumeData.personalInfo.address;
+            
+            const emailLink = document.getElementById('header-email');
+            emailLink.href = `mailto:${resumeData.personalInfo.email}`;
+            emailLink.textContent = resumeData.personalInfo.email;
+            
+            document.getElementById('header-phone').textContent = resumeData.personalInfo.phone;
+            
+            const linkedinLink = document.getElementById('header-linkedin');
+            linkedinLink.href = resumeData.personalInfo.linkedin;
+            
+            const githubLink = document.getElementById('header-github');
+            githubLink.href = resumeData.personalInfo.github;
+
+
+            const resumeNav = document.getElementById('resume-nav');
+            const resumeContent = document.getElementById('resume-content');
+            let navHtml = '';
+            let contentHtml = '';
+
+            resumeData.sections.forEach((section) => {
+                // Create navigation link
+                navHtml += `
+                    <li>
+                        <a href="#${section.id}" class="nav-link block p-3 rounded-lg text-lg font-medium text-gray-700 hover:bg-gray-200 transition duration-200 ease-in-out mb-2" data-section-id="${section.id}">
+                            ${section.title}
+                        </a>
+                    </li>
+                `;
+
+                // Determine which rendering function to use based on section type
+                let sectionContentHtml = '';
+                switch (section.type) {
+                    case 'text':
+                        sectionContentHtml = renderText(section.data);
+                        break;
+                    case 'skills':
+                        sectionContentHtml = renderSkills(section.data);
+                        break;
+                    case 'experience':
+                        sectionContentHtml = renderExperience(section.data);
+                        break;
+                    case 'education':
+                        sectionContentHtml = renderEducation(section.data);
+                        break;
+                    case 'certifications':
+                        sectionContentHtml = renderCertifications(section.data);
+                        break;
+                    case 'list': // For languages and potentially other simple lists
+                        sectionContentHtml = renderList(section.data);
+                        break;
+                    case 'additionalInfo':
+                        sectionContentHtml = renderAdditionalInfo(section.data);
+                        break;
+                    default:
+                        sectionContentHtml = `<p class="text-red-500">Error: Unknown section type for ${section.title}</p>`;
+                }
+
+                // Create content section (initially hidden)
+                contentHtml += `
+                    <section id="${section.id}-content" class="content-section mb-8">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-2 border-gray-200 pb-2 mb-4">${section.title}</h2>
+                        ${sectionContentHtml}
+                    </section>
+                `;
+            });
+
+            resumeNav.innerHTML = `<ul class="list-none p-0">${navHtml}</ul>`;
+            resumeContent.innerHTML = contentHtml;
+
+            // Add event listeners to navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function showSection(sectionId) {
+                // Hide all content sections
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Deactivate all nav links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Show the selected content section
+                const targetSection = document.getElementById(`${sectionId}-content`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                // Activate the corresponding nav link
+                const activeNavLink = document.querySelector(`.nav-link[data-section-id="${sectionId}"]`);
+                if (activeNavLink) {
+                    activeNavLink.classList.add('active');
+                }
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default anchor link behavior
+                    const sectionId = event.target.dataset.sectionId;
+                    showSection(sectionId);
+                });
+            });
+
+            // Show the first section by default
+            if (resumeData.sections.length > 0) {
+                showSection(resumeData.sections[0].id);
+            }
+        }
+
+        // Render the resume when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', renderResume);
+    </script>
+</body>
+</html>
