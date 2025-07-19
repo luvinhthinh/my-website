@@ -57,7 +57,6 @@
         <!-- Right Column: Content Details -->
         <div id="resume-content" class="lg:w-3/4 pl-0 lg:pl-8">
             <!-- Resume content details will be dynamically loaded here -->
-            <p class="text-center text-gray-500">Select a section from the left navigation.</p>
         </div>
     </div>
 
@@ -84,7 +83,7 @@
             const content = document.getElementById('resume-content');
             
             // Clear default content
-            content.innerHTML = '<p class="text-center text-gray-500">Select a section from the left navigation.</p>';
+            content.innerHTML = '';
             nav.innerHTML = '';
 
             resumeData.sections.forEach((section, index) => {

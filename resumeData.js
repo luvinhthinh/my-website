@@ -3,7 +3,7 @@ const resumeData = {
         "name": "Lu Vinh Thinh Mono",
         "address": "MUNICH, 81925",
         "email": "LUVINHTHINΗ.ΜΟΝΟ@GMAIL.COM",
-        "phone": "(+49) 151 1103 6828",
+        "phone": "(+49) 15X XXXX XX28",
         "linkedin": "https://sg.linkedin.com/pub/vinh-thinh-lu/50/870/35b",
         "github": "https://github.com/luvinhthinh"
     },
